@@ -15,12 +15,15 @@ public:
 	string getOutAdress() {
 		return town + ", " + street + ", " + std::to_string(number_house) + ", " + std::to_string(number_apartament);
 	}
+	string get_town() {
+		return town;
+	}
 };
 
 void sort(adress* arr, int size) {
 	for (int i = 0; i < size; i++) {
 		for (int j = 0; j < size - i - 1; j++) {
-			if (arr[j].getOutAdress() > arr[j + 1].getOutAdress()) {
+			if (arr[j].get_town() > arr[j + 1].get_town()) {
 				swap(arr[j], arr[j + 1]);
 			}
 		}
